@@ -1,0 +1,42 @@
+[
+  {
+    "profession": "Chef",
+    "name": "Uniform cleaning allowance",
+    "criteria": "Must purchase and clean uniform yourself"
+  },
+  {
+    "profession": "Chef",
+    "name": "Kitchen equipment allowance",
+    "criteria": "Purchase of essential kitchen tools and equipment for work"
+  },
+  {
+    "profession": "Construction Worker",
+    "name": "Safety equipment allowance",
+    "criteria": "Must buy your own safety boots and protective equipment"
+  },
+  {
+    "profession": "Construction Worker",
+    "name": "Tools allowance",
+    "criteria": "Purchase of work-related tools and equipment"
+  },
+  {
+    "profession": "Teacher",
+    "name": "Teaching materials allowance",
+    "criteria": "Purchase of books and teaching materials for work"
+  },
+  {
+    "profession": "Teacher",
+    "name": "Professional membership",
+    "criteria": "Membership fees for professional teaching bodies"
+  },
+  {
+    "profession": "Nurse",
+    "name": "Uniform cleaning allowance",
+    "criteria": "Must launder work uniform yourself"
+  },
+  {
+    "profession": "Nurse",
+    "name": "Professional registration",
+    "criteria": "Annual NMC registration fees"
+  }
+]
