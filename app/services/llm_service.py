@@ -5,6 +5,7 @@ import logging
 from functools import lru_cache
 import hashlib
 import json
+from app.services.profession_mapper import ProfessionMapper
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -19,6 +20,7 @@ class LLMService:
                 device=-1  # CPU
             )
             self._cache = {}
+            self.profession_mapper = ProfessionMapper()
             logger.info("LLM model initialized successfully")
         except Exception as e:
             logger.error(f"Failed to initialize LLM model: {str(e)}")
@@ -44,43 +46,53 @@ class LLMService:
         questions: str,
         tax_rules: List[Dict[str, str]]
     ) -> List[str]:
-        """Generate tax relief recommendations with caching"""
+        """Generate tax relief recommendations with improved matching"""
         cache_key = self._generate_cache_key(profession, questions)
         
-        # Check cache first
         if cache_key in self._cache:
-            logger.info("Cache hit for recommendations")
             return self._cache[cache_key]
 
-        # Filter rules by profession
+        # Map profession to closest match
+        mapped_profession = self.profession_mapper.get_matching_profession(profession)
+        
+        # Get relevant rules
         relevant_rules = [
             rule for rule in tax_rules 
-            if rule["profession"].lower() == profession.lower()
+            if rule["profession"].lower() == mapped_profession.lower()
         ]
 
         if not relevant_rules:
             return []
 
         try:
-            # Prepare criteria for classification
-            criteria_texts = tuple(rule["criteria"] for rule in relevant_rules)
+            # Prepare criteria with more context
+            criteria_texts = [
+                f"Tax relief for {rule['criteria'].lower()}" 
+                for rule in relevant_rules
+            ]
             
-            # Get classification results (cached)
-            result = self._classify_text(questions, criteria_texts)
+            # Enhance user questions with context
+            enhanced_questions = f"I want to know about tax relief for: {questions}"
+            
+            # Get classification with lower threshold
+            result = self._classify_text(
+                enhanced_questions,
+                tuple(criteria_texts)
+            )
 
-            # Generate recommendations
+            # Generate recommendations with lower threshold
             recommendations = []
-            for score, criteria in zip(result['scores'], criteria_texts):
-                if score > 0.5:  # Confidence threshold
-                    matching_rule = next(
-                        rule for rule in relevant_rules 
-                        if rule["criteria"] == criteria
-                    )
+            for score, criteria, rule in zip(
+                result['scores'],
+                criteria_texts,
+                relevant_rules
+            ):
+                logger.debug(f"Score {score:.2f} for {criteria}")
+                if score > 0.3:  # Lower threshold for better matching
                     recommendations.append(
-                        f"{matching_rule['name']}: {matching_rule['criteria']}"
+                        f"{rule['name']}: {rule['criteria']}"
                     )
 
-            # Cache the results
             self._cache[cache_key] = recommendations
             return recommendations
 

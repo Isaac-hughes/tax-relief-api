@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field, validator
 from typing import Dict, List, Union
 import re
+from app.utils.data_loader import load_tax_rules
 
 class TaxRequest(BaseModel):
     profession: str = Field(
@@ -18,10 +19,10 @@ class TaxRequest(BaseModel):
 
     @validator('profession')
     def validate_profession(cls, v):
-        valid_professions = {"Chef", "Construction Worker", "Teacher", "Nurse"}
-        if v not in valid_professions:
-            raise ValueError(f"Profession must be one of: {valid_professions}")
-        return v
+        # Allow any profession - mapping will handle it
+        if len(v.strip()) < 2:
+            raise ValueError("Profession must be at least 2 characters")
+        return v.strip()
 
     @validator('questions')
     def validate_questions(cls, v):

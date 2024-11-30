@@ -38,5 +38,165 @@
     "profession": "Nurse",
     "name": "Professional registration",
     "criteria": "Annual NMC registration fees"
+  },
+  {
+    "profession": "Doctor",
+    "name": "Professional membership fees",
+    "criteria": "Membership fees for medical organizations such as the BMA"
+  },
+  {
+    "profession": "Doctor",
+    "name": "Medical equipment allowance",
+    "criteria": "Purchase of stethoscopes, otoscopes, and other essential tools"
+  },
+  {
+    "profession": "IT Consultant",
+    "name": "Home office expenses",
+    "criteria": "Claim for electricity, heating, and internet if working from home"
+  },
+  {
+    "profession": "IT Consultant",
+    "name": "Professional software subscriptions",
+    "criteria": "Subscriptions to software necessary for work"
+  },
+  {
+    "profession": "Electrician",
+    "name": "Tools and equipment allowance",
+    "criteria": "Purchase of electrical tools and maintenance equipment"
+  },
+  {
+    "profession": "Electrician",
+    "name": "Safety clothing allowance",
+    "criteria": "Purchase of protective gloves, boots, and goggles"
+  },
+  {
+    "profession": "Plumber",
+    "name": "Tools allowance",
+    "criteria": "Purchase and maintenance of work-related tools"
+  },
+  {
+    "profession": "Plumber",
+    "name": "Uniform cleaning allowance",
+    "criteria": "Cleaning and maintaining uniforms used for work"
+  },
+  {
+    "profession": "Taxi Driver",
+    "name": "Mileage allowance",
+    "criteria": "Claim for mileage using your own vehicle for work"
+  },
+  {
+    "profession": "Taxi Driver",
+    "name": "Vehicle maintenance allowance",
+    "criteria": "Costs for servicing and maintaining your vehicle"
+  },
+  {
+    "profession": "Freelance Writer",
+    "name": "Home office expenses",
+    "criteria": "Claim for electricity, heating, and internet if working from home"
+  },
+  {
+    "profession": "Freelance Writer",
+    "name": "Professional software",
+    "criteria": "Subscriptions to writing or publishing tools such as Grammarly or Adobe"
+  },
+  {
+    "profession": "Pilot",
+    "name": "Uniform cleaning allowance",
+    "criteria": "Costs associated with cleaning uniforms"
+  },
+  {
+    "profession": "Pilot",
+    "name": "Professional licensing fees",
+    "criteria": "Costs for renewing pilot licenses"
+  },
+  {
+    "profession": "Actor",
+    "name": "Costume and makeup allowance",
+    "criteria": "Purchase of costumes and makeup required for roles"
+  },
+  {
+    "profession": "Actor",
+    "name": "Travel expenses",
+    "criteria": "Claim for travel to auditions or filming locations"
+  },
+  {
+    "profession": "Musician",
+    "name": "Instrument maintenance",
+    "criteria": "Costs for maintaining and repairing instruments"
+  },
+  {
+    "profession": "Musician",
+    "name": "Sheet music and accessories",
+    "criteria": "Purchase of sheet music, stands, and other accessories"
+  },
+  {
+    "profession": "Journalist",
+    "name": "Travel expenses",
+    "criteria": "Travel costs for covering news events"
+  },
+  {
+    "profession": "Journalist",
+    "name": "Equipment allowance",
+    "criteria": "Purchase of cameras, microphones, and laptops for work"
+  },
+  {
+    "profession": "Social Worker",
+    "name": "Travel expenses",
+    "criteria": "Claim for mileage when visiting clients"
+  },
+  {
+    "profession": "Social Worker",
+    "name": "Professional registration",
+    "criteria": "Costs associated with maintaining professional registration"
+  },
+  {
+    "profession": "Artist",
+    "name": "Art supplies allowance",
+    "criteria": "Purchase of paints, brushes, canvases, and other materials"
+  },
+  {
+    "profession": "Artist",
+    "name": "Studio rental",
+    "criteria": "Rental expenses for studio space used exclusively for work"
+  },
+  {
+    "profession": "Photographer",
+    "name": "Camera equipment allowance",
+    "criteria": "Purchase and maintenance of cameras, lenses, and accessories"
+  },
+  {
+    "profession": "Photographer",
+    "name": "Travel expenses",
+    "criteria": "Costs for travel to shoot locations"
+  },
+  {
+    "profession": "Real Estate Agent",
+    "name": "Vehicle mileage",
+    "criteria": "Claim for mileage using your own vehicle to visit clients or properties"
+  },
+  {
+    "profession": "Real Estate Agent",
+    "name": "Marketing expenses",
+    "criteria": "Costs for flyers, brochures, and other promotional materials"
+  },
+  {
+    "profession": "Accountant",
+    "name": "Professional memberships",
+    "criteria": "Membership fees for bodies like ACCA or CIMA"
+  },
+  {
+    "profession": "Accountant",
+    "name": "Office equipment allowance",
+    "criteria": "Purchase of calculators, filing systems, and office furniture"
+  },
+  {
+    "profession": "Graphic Designer",
+    "name": "Software subscriptions",
+    "criteria": "Costs for Adobe Creative Suite or similar design tools"
+  },
+  {
+    "profession": "Graphic Designer",
+    "name": "Hardware expenses",
+    "criteria": "Purchase of high-performance computers or tablets for design work"
   }
 ]
