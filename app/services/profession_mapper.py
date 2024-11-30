@@ -31,26 +31,45 @@ class ProfessionMapper:
         }
 
     def get_matching_profession(self, input_profession: str) -> str:
-        # First, try exact match from tax rules
         tax_rules = load_tax_rules()
         valid_professions = {rule["profession"] for rule in tax_rules}
+        input_lower = input_profession.lower()
         
+        # 1. Direct match
         if input_profession in valid_professions:
             return input_profession
-
-        # Check profession groups
-        input_lower = input_profession.lower()
-        for group in self.profession_groups.values():
-            for profession in group:
-                if profession.lower() in valid_professions and (
-                    profession.lower() == input_lower or
-                    input_lower in profession.lower() or
-                    profession.lower() in input_lower
-                ):
-                    logger.info(f"Mapped '{input_profession}' to '{profession}'")
-                    return profession
-
-        # Use fuzzy matching as fallback
+        
+        # 2. Find profession group
+        matched_group = None
+        for group_name, professions in self.profession_groups.items():
+            if any(p.lower() == input_lower for p in professions):
+                matched_group = group_name
+                break
+            
+        if matched_group:
+            # Find valid professions from the same group
+            group_professions = self.profession_groups[matched_group]
+            valid_group_profs = [p for p in group_professions if p in valid_professions]
+            
+            if valid_group_profs:
+                matched_prof = valid_group_profs[0]
+                logger.info(f"Group matched '{input_profession}' to '{matched_prof}' via {matched_group} group")
+                return matched_prof
+        
+        # 3. Fuzzy match within profession groups first
+        for group_name, professions in self.profession_groups.items():
+            if any(
+                input_lower in p.lower() or p.lower() in input_lower 
+                for p in professions
+            ):
+                # Find valid professions from this group
+                valid_group_profs = [p for p in professions if p in valid_professions]
+                if valid_group_profs:
+                    matched_prof = valid_group_profs[0]
+                    logger.info(f"Fuzzy group matched '{input_profession}' to '{matched_prof}' via {group_name} group")
+                    return matched_prof
+        
+        # 4. General fuzzy matching as last resort
         matches = difflib.get_close_matches(
             input_profession,
             valid_professions,
@@ -61,7 +80,18 @@ class ProfessionMapper:
         if matches:
             logger.info(f"Fuzzy matched '{input_profession}' to '{matches[0]}'")
             return matches[0]
-            
-        # If no match found, return original (will result in empty recommendations)
+        
         logger.warning(f"No profession mapping found for '{input_profession}'")
-        return input_profession 
+        return input_profession
+
+    def get_related_professions(self, profession: str) -> Set[str]:
+        """Get related professions from the same group"""
+        # Find which group the profession belongs to
+        for group_name, professions in self.profession_groups.items():
+            if any(p.lower() == profession.lower() for p in professions):
+                logger.info(f"Found related professions in {group_name} group")
+                return professions
+
+        # If no group found, return empty set
+        logger.warning(f"No related professions found for {profession}")
+        return set()
