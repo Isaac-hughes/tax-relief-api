@@ -198,5 +198,345 @@
     "profession": "Graphic Designer",
     "name": "Hardware expenses",
     "criteria": "Purchase of high-performance computers or tablets for design work"
+  },
+  {
+    "profession": "Physiotherapist",
+    "name": "Professional registration",
+    "criteria": "Annual HCPC registration fees and insurance costs"
+  },
+  {
+    "profession": "Physiotherapist",
+    "name": "Equipment allowance",
+    "criteria": "Purchase of treatment tables, therapeutic equipment and assessment tools"
+  },
+  {
+    "profession": "Dental Hygienist",
+    "name": "Professional registration",
+    "criteria": "GDC registration fees and indemnity insurance"
+  },
+  {
+    "profession": "Dental Hygienist",
+    "name": "Uniform and PPE expenses",
+    "criteria": "Purchase and cleaning of scrubs, masks, and protective equipment"
+  },
+  {
+    "profession": "Civil Engineer",
+    "name": "Professional memberships",
+    "criteria": "ICE membership fees and chartered status costs"
+  },
+  {
+    "profession": "Civil Engineer",
+    "name": "Safety equipment",
+    "criteria": "Purchase of hard hats, safety boots and high-visibility clothing"
+  },
+  {
+    "profession": "Civil Engineer",
+    "name": "Software licenses",
+    "criteria": "Subscriptions for CAD and engineering analysis software"
+  },
+  {
+    "profession": "Personal Trainer",
+    "name": "Insurance costs",
+    "criteria": "Professional liability and public indemnity insurance"
+  },
+  {
+    "profession": "Personal Trainer",
+    "name": "Equipment allowance",
+    "criteria": "Purchase of fitness equipment and assessment tools"
+  },
+  {
+    "profession": "Personal Trainer",
+    "name": "Training certification",
+    "criteria": "Costs for maintaining required fitness certifications"
+  },
+  {
+    "profession": "Architect",
+    "name": "RIBA membership",
+    "criteria": "Annual Royal Institute of British Architects membership fees"
+  },
+  {
+    "profession": "Architect",
+    "name": "Software subscriptions",
+    "criteria": "AutoCAD, Revit, and other architectural software licenses"
+  },
+  {
+    "profession": "Architect",
+    "name": "Professional indemnity",
+    "criteria": "Professional indemnity insurance required for practice"
+  },
+  {
+    "profession": "Optometrist",
+    "name": "Professional registration",
+    "criteria": "GOC registration fees and professional indemnity insurance"
+  },
+  {
+    "profession": "Optometrist",
+    "name": "Equipment maintenance",
+    "criteria": "Maintenance and calibration of optometry equipment"
+  },
+  {
+    "profession": "Optometrist",
+    "name": "CPD expenses",
+    "criteria": "Mandatory continuing professional development courses and materials"
+  },
+  {
+    "profession": "Paramedic",
+    "name": "HCPC registration",
+    "criteria": "Annual HCPC registration fees and professional insurance"
+  },
+  {
+    "profession": "Paramedic",
+    "name": "Uniform maintenance",
+    "criteria": "Cleaning and maintenance of paramedic uniforms"
+  },
+  {
+    "profession": "Paramedic",
+    "name": "Equipment costs",
+    "criteria": "Purchase of personal medical equipment and supplies"
+  },
+  {
+    "profession": "Occupational Therapist",
+    "name": "Professional registration",
+    "criteria": "HCPC registration and professional body membership fees"
+  },
+  {
+    "profession": "Occupational Therapist",
+    "name": "Assessment tools",
+    "criteria": "Purchase of specialist assessment and therapy equipment"
+  },
+  {
+    "profession": "Speech Therapist",
+    "name": "RCSLT membership",
+    "criteria": "Royal College of Speech and Language Therapists membership fees"
+  },
+  {
+    "profession": "Speech Therapist",
+    "name": "Therapy resources",
+    "criteria": "Purchase of therapy materials and assessment tools"
+  },
+  {
+    "profession": "Structural Engineer",
+    "name": "IStructE membership",
+    "criteria": "Institution of Structural Engineers membership and chartership fees"
+  },
+  {
+    "profession": "Structural Engineer",
+    "name": "Software licenses",
+    "criteria": "Engineering analysis and design software subscriptions"
+  },
+  {
+    "profession": "Structural Engineer",
+    "name": "Safety equipment",
+    "criteria": "PPE and site visit safety equipment"
+  },
+  {
+    "profession": "Network Engineer",
+    "name": "Certification costs",
+    "criteria": "Cisco, CompTIA and other professional certifications"
+  },
+  {
+    "profession": "Network Engineer",
+    "name": "Tools allowance",
+    "criteria": "Network testing and maintenance tools"
+  },
+  {
+    "profession": "Systems Architect",
+    "name": "Professional memberships",
+    "criteria": "BCS and other professional body membership fees"
+  },
+  {
+    "profession": "Systems Architect",
+    "name": "Training courses",
+    "criteria": "Technical training and certification programs"
+  },
+  {
+    "profession": "Hotel Manager",
+    "name": "Professional insurance",
+    "criteria": "Public liability and professional indemnity insurance"
+  },
+  {
+    "profession": "Hotel Manager",
+    "name": "Uniform expenses",
+    "criteria": "Purchase and maintenance of business attire"
+  },
+  {
+    "profession": "Restaurant Manager",
+    "name": "Food hygiene certification",
+    "criteria": "Food safety and hygiene certification costs"
+  },
+  {
+    "profession": "Restaurant Manager",
+    "name": "Professional memberships",
+    "criteria": "Industry body memberships and training courses"
+  },
+  {
+    "profession": "Event Planner",
+    "name": "Professional insurance",
+    "criteria": "Event liability and cancellation insurance"
+  },
+  {
+    "profession": "Event Planner",
+    "name": "Software subscriptions",
+    "criteria": "Event planning and management software licenses"
+  },
+  {
+    "profession": "Voice Actor",
+    "name": "Recording equipment",
+    "criteria": "Microphones, audio interfaces, and recording software"
+  },
+  {
+    "profession": "Voice Actor",
+    "name": "Studio costs",
+    "criteria": "Home studio setup and acoustic treatment"
+  },
+  {
+    "profession": "Motion Designer",
+    "name": "Software licenses",
+    "criteria": "After Effects, Cinema 4D, and other animation software"
+  },
+  {
+    "profession": "Motion Designer",
+    "name": "Hardware costs",
+    "criteria": "High-performance computers and rendering equipment"
+  },
+  {
+    "profession": "UI/UX Designer",
+    "name": "Design software",
+    "criteria": "Figma, Sketch, and prototyping tool subscriptions"
+  },
+  {
+    "profession": "UI/UX Designer",
+    "name": "Research tools",
+    "criteria": "User testing and research software subscriptions"
+  },
+  {
+    "profession": "Dental Nurse",
+    "name": "GDC registration",
+    "criteria": "Annual GDC registration fees"
+  },
+  {
+    "profession": "Dental Nurse",
+    "name": "Uniform expenses",
+    "criteria": "Purchase and cleaning of dental scrubs and shoes"
+  },
+  {
+    "profession": "Veterinarian",
+    "name": "RCVS membership",
+    "criteria": "Royal College of Veterinary Surgeons membership fees"
+  },
+  {
+    "profession": "Veterinarian",
+    "name": "Equipment costs",
+    "criteria": "Veterinary instruments and diagnostic equipment"
+  },
+  {
+    "profession": "Veterinarian",
+    "name": "Professional insurance",
+    "criteria": "Veterinary practice insurance and liability coverage"
+  },
+  {
+    "profession": "Carpenter",
+    "name": "Tools allowance",
+    "criteria": "Purchase and maintenance of carpentry tools"
+  },
+  {
+    "profession": "Carpenter",
+    "name": "Vehicle expenses",
+    "criteria": "Van costs and mileage for site visits"
+  },
+  {
+    "profession": "Plasterer",
+    "name": "Tools and equipment",
+    "criteria": "Plastering tools and protective equipment"
+  },
+  {
+    "profession": "Plasterer",
+    "name": "Vehicle costs",
+    "criteria": "Transport of tools and materials to work sites"
+  },
+  {
+    "profession": "Driving Instructor",
+    "name": "Vehicle expenses",
+    "criteria": "Maintenance and insurance of dual-control car"
+  },
+  {
+    "profession": "Driving Instructor",
+    "name": "ADI license",
+    "criteria": "Approved Driving Instructor license renewal fees"
+  },
+  {
+    "profession": "Bus Driver",
+    "name": "License renewal",
+    "criteria": "PCV license renewal and medical examination costs"
+  },
+  {
+    "profession": "Bus Driver",
+    "name": "Uniform cleaning",
+    "criteria": "Cleaning and maintenance of company uniform"
+  },
+  {
+    "profession": "Financial Advisor",
+    "name": "FCA registration",
+    "criteria": "Financial Conduct Authority registration fees"
+  },
+  {
+    "profession": "Financial Advisor",
+    "name": "Professional insurance",
+    "criteria": "Professional indemnity insurance costs"
+  },
+  {
+    "profession": "Financial Advisor",
+    "name": "Software subscriptions",
+    "criteria": "Financial planning and analysis software licenses"
+  },
+  {
+    "profession": "Beautician",
+    "name": "Equipment costs",
+    "criteria": "Beauty treatment equipment and supplies"
+  },
+  {
+    "profession": "Beautician",
+    "name": "Insurance coverage",
+    "criteria": "Public liability and treatment insurance"
+  },
+  {
+    "profession": "Hairdresser",
+    "name": "Tools allowance",
+    "criteria": "Professional scissors, dryers, and styling equipment"
+  },
+  {
+    "profession": "Hairdresser",
+    "name": "Product expenses",
+    "criteria": "Professional hair products and supplies"
+  },
+  {
+    "profession": "Sports Coach",
+    "name": "Certification costs",
+    "criteria": "Coaching qualifications and first aid certificates"
+  },
+  {
+    "profession": "Sports Coach",
+    "name": "Equipment allowance",
+    "criteria": "Sports equipment and training aids"
+  },
+  {
+    "profession": "Dance Teacher",
+    "name": "Studio hire",
+    "criteria": "Rental of dance studio space for classes"
+  },
+  {
+    "profession": "Dance Teacher",
+    "name": "Music licenses",
+    "criteria": "PPL and PRS music licensing fees"
+  },
+  {
+    "profession": "Yoga Instructor",
+    "name": "Insurance costs",
+    "criteria": "Professional liability and public indemnity insurance"
+  },
+  {
+    "profession": "Yoga Instructor",
+    "name": "Equipment expenses",
+    "criteria": "Yoga mats, blocks, and teaching materials"
   }
 ]

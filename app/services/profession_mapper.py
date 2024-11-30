@@ -8,26 +8,91 @@ logger = logging.getLogger(__name__)
 class ProfessionMapper:
     def __init__(self):
         self.profession_groups = {
-            "IT": {
+            "IT_Digital": {
                 "IT Consultant", "Software Developer", "Software Engineer",
-                "Programmer", "Web Developer", "DevOps Engineer"
+                "Programmer", "Web Developer", "DevOps Engineer", "Systems Architect",
+                "Network Engineer", "Data Scientist", "Database Administrator",
+                "UI/UX Designer", "Motion Designer", "Game Developer"
             },
-            "Medical": {
+            "Medical_Healthcare": {
                 "Doctor", "Physician", "Surgeon", "Medical Practitioner",
-                "GP", "Consultant"
+                "GP", "Consultant", "Nurse", "Dental Nurse", "Dentist",
+                "Physiotherapist", "Optometrist", "Paramedic", "Veterinarian",
+                "Dental Hygienist", "Occupational Therapist", "Speech Therapist"
             },
-            "Construction": {
-                "Construction Worker", "Builder", "Carpenter",
-                "Electrician", "Plumber", "Site Manager"
+            "Construction_Trades": {
+                "Construction Worker", "Builder", "Carpenter", "Electrician",
+                "Plumber", "Site Manager", "Plasterer", "Bricklayer",
+                "Painter", "Decorator", "Roofer", "Glazier", "Scaffolder",
+                "Civil Engineer", "Structural Engineer"
             },
-            "Creative": {
-                "Artist", "Graphic Designer", "UI Designer", 
-                "Photographer", "Illustrator"
+            "Creative_Arts": {
+                "Artist", "Graphic Designer", "UI Designer", "Photographer",
+                "Illustrator", "Voice Actor", "Actor", "Musician",
+                "Interior Designer", "Fashion Designer", "Animator",
+                "Sound Engineer", "Video Editor", "Content Creator"
             },
-            "Education": {
-                "Teacher", "Lecturer", "Professor", 
-                "Teaching Assistant", "Tutor"
+            "Education_Training": {
+                "Teacher", "Lecturer", "Professor", "Teaching Assistant",
+                "Tutor", "Sports Coach", "Dance Teacher", "Yoga Instructor",
+                "Driving Instructor", "Personal Trainer", "Music Teacher",
+                "Language Teacher", "Special Needs Teacher"
+            },
+            "Finance_Business": {
+                "Financial Advisor", "Accountant", "Investment Banker",
+                "Insurance Broker", "Business Analyst", "Management Consultant",
+                "Tax Consultant", "Mortgage Advisor", "Risk Analyst",
+                "Project Manager", "Marketing Manager"
+            },
+            "Transportation": {
+                "Taxi Driver", "Bus Driver", "Pilot", "Train Driver",
+                "Courier", "Delivery Driver", "HGV Driver", "Fleet Manager",
+                "Driving Instructor", "Transport Manager"
+            },
+            "Service_Hospitality": {
+                "Chef", "Beautician", "Hairdresser", "Hotel Manager",
+                "Restaurant Manager", "Event Planner", "Barber",
+                "Spa Therapist", "Wedding Planner", "Catering Manager"
+            },
+            "Legal_Professional": {
+                "Lawyer", "Solicitor", "Barrister", "Legal Executive",
+                "Paralegal", "Conveyancer", "Patent Attorney",
+                "Legal Secretary", "Court Clerk"
+            },
+            "Wellness_Fitness": {
+                "Personal Trainer", "Yoga Instructor", "Physiotherapist",
+                "Sports Therapist", "Nutritionist", "Fitness Instructor",
+                "Life Coach", "Sports Massage Therapist"
+            },
+            "Property_Real_Estate": {
+                "Estate Agent", "Property Manager", "Surveyor",
+                "Letting Agent", "Property Developer", "Building Inspector",
+                "Facilities Manager", "Real Estate Consultant"
+            },
+            "Media_Communications": {
+                "Journalist", "Freelance Writer", "Public Relations Manager",
+                "Social Media Manager", "Copywriter", "Broadcasting Professional",
+                "Media Producer", "Communications Consultant"
             }
+        }
+
+        # Add common variations and aliases
+        self.profession_aliases = {
+            "Software Engineer": ["Programmer", "Developer", "Coder", "Software Dev", "SWE", "Software Developer"],
+            "IT Consultant": ["Tech Consultant", "Technical Consultant", "IT Advisor", "Technology Consultant"],
+            "Systems Architect": ["Solutions Architect", "Technical Architect", "Enterprise Architect", "CTO"],
+            
+            "Doctor": ["Physician", "Medical Doctor", "GP", "General Practitioner", "Medical Officer"],
+            "Physiotherapist": ["Physical Therapist", "PT", "Sports Therapist", "Rehab Therapist"],
+            "Speech Therapist": ["Speech Pathologist", "Speech and Language Therapist", "SLT"],
+            
+            "Financial Advisor": ["Financial Planner", "Financial Consultant", "Investment Advisor", "Wealth Manager"],
+            "Accountant": ["Bookkeeper", "Accounts Manager", "Financial Controller", "Chartered Accountant"],
+            "Management Consultant": ["Business Consultant", "Strategy Consultant", "Business Advisor"],
+            
+            "Graphic Designer": ["Digital Designer", "Visual Designer", "Brand Designer"],
+            "UI/UX Designer": ["Product Designer", "Interface Designer", "UX/UI Designer", "Digital Product Designer"],
+            "Content Creator": ["YouTuber", "Social Media Creator", "Digital Content Producer", "Influencer"]
         }
 
     def get_matching_profession(self, input_profession: str) -> str:
@@ -39,46 +104,53 @@ class ProfessionMapper:
         if input_profession in valid_professions:
             return input_profession
         
-        # 2. Find profession group
+        # 2. Check aliases
+        for main_profession, aliases in self.profession_aliases.items():
+            if input_lower in [alias.lower() for alias in aliases]:
+                if main_profession in valid_professions:
+                    logger.info(f"Alias matched '{input_profession}' to '{main_profession}'")
+                    return main_profession
+        
+        # Improve group matching
+        best_match = None
+        highest_ratio = 0
         matched_group = None
+        
+        # First try exact group matches
         for group_name, professions in self.profession_groups.items():
-            if any(p.lower() == input_lower for p in professions):
-                matched_group = group_name
-                break
-            
-        if matched_group:
-            # Find valid professions from the same group
-            group_professions = self.profession_groups[matched_group]
-            valid_group_profs = [p for p in group_professions if p in valid_professions]
-            
-            if valid_group_profs:
-                matched_prof = valid_group_profs[0]
-                logger.info(f"Group matched '{input_profession}' to '{matched_prof}' via {matched_group} group")
-                return matched_prof
+            for profession in professions:
+                ratio = difflib.SequenceMatcher(None, input_lower, profession.lower()).ratio()
+                if ratio > highest_ratio and profession in valid_professions:
+                    highest_ratio = ratio
+                    best_match = profession
+                    matched_group = group_name
         
-        # 3. Fuzzy match within profession groups first
+        # If we found a good match (over 0.8 similarity)
+        if highest_ratio > 0.8:
+            logger.info(f"Found close match '{input_profession}' to '{best_match}' ({highest_ratio:.2f}) via {matched_group} group")
+            return best_match
+        
+        # If no good match, try fuzzy matching within appropriate groups
+        potential_groups = []
         for group_name, professions in self.profession_groups.items():
-            if any(
-                input_lower in p.lower() or p.lower() in input_lower 
-                for p in professions
-            ):
-                # Find valid professions from this group
-                valid_group_profs = [p for p in professions if p in valid_professions]
-                if valid_group_profs:
-                    matched_prof = valid_group_profs[0]
-                    logger.info(f"Fuzzy group matched '{input_profession}' to '{matched_prof}' via {group_name} group")
-                    return matched_prof
+            group_words = set(' '.join(professions).lower().split())
+            input_words = set(input_lower.split())
+            if len(input_words & group_words) > 0:  # If any words overlap
+                potential_groups.append(group_name)
         
-        # 4. General fuzzy matching as last resort
-        matches = difflib.get_close_matches(
-            input_profession,
-            valid_professions,
-            n=1,
-            cutoff=0.6
-        )
+        # Try fuzzy matching only within relevant groups
+        if potential_groups:
+            for group_name in potential_groups:
+                valid_group_profs = [p for p in self.profession_groups[group_name] if p in valid_professions]
+                matches = difflib.get_close_matches(input_profession, valid_group_profs, n=1, cutoff=0.6)
+                if matches:
+                    logger.info(f"Group fuzzy matched '{input_profession}' to '{matches[0]}' via {group_name}")
+                    return matches[0]
         
+        # Fall back to general fuzzy matching with higher cutoff
+        matches = difflib.get_close_matches(input_profession, valid_professions, n=1, cutoff=0.7)
         if matches:
-            logger.info(f"Fuzzy matched '{input_profession}' to '{matches[0]}'")
+            logger.info(f"General fuzzy matched '{input_profession}' to '{matches[0]}'")
             return matches[0]
         
         logger.warning(f"No profession mapping found for '{input_profession}'")
