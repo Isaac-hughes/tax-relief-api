@@ -1,0 +1,32 @@
+[
+  {
+    "profession": "Teacher",
+    "name": "Teaching materials",
+    "criteria": "Books, stationery, and teaching resources"
+  },
+  {
+    "profession": "Teacher",
+    "name": "Professional membership",
+    "criteria": "Teaching union and professional body fees"
+  },
+  {
+    "profession": "Lecturer",
+    "name": "Research materials",
+    "criteria": "Academic journals and research resources"
+  },
+  {
+    "profession": "Sports Coach",
+    "name": "Equipment costs",
+    "criteria": "Sports equipment and training aids"
+  },
+  {
+    "profession": "Music Teacher",
+    "name": "Instrument costs",
+    "criteria": "Musical instruments and sheet music"
+  },
+  {
+    "profession": "Driving Instructor",
+    "name": "Vehicle expenses",
+    "criteria": "Car maintenance and dual control fitting costs"
+  }
+]

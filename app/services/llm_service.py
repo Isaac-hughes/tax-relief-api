@@ -6,6 +6,7 @@ from functools import lru_cache
 import hashlib
 import json
 from app.services.profession_mapper import ProfessionMapper
+from app.utils.data_loader import TaxRulesLoader
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -21,6 +22,7 @@ class LLMService:
             )
             self._cache = {}
             self.profession_mapper = ProfessionMapper()
+            self.rules_loader = TaxRulesLoader()
             logger.info("LLM model initialized successfully")
         except Exception as e:
             logger.error(f"Failed to initialize LLM model: {str(e)}")
@@ -62,70 +64,71 @@ class LLMService:
         self,
         profession: str,
         questions: str,
-        tax_rules: List[Dict[str, str]]
+        tax_rules: List[Dict[str, str]] = None
     ) -> List[str]:
         cache_key = self._generate_cache_key(profession, questions)
         
         if cache_key in self._cache:
             return self._cache[cache_key]
 
+        # Map profession first
         mapped_profession = self.profession_mapper.get_matching_profession(profession)
+        logger.info(f"Mapped profession '{profession}' to '{mapped_profession}'")
         
-        # Get both exact and related profession rules
-        relevant_rules = []
-        mapped_prof_lower = mapped_profession.lower()
-
-        # First add exact matches
-        relevant_rules.extend([
-            rule for rule in tax_rules 
-            if rule["profession"].lower() == mapped_prof_lower
-        ])
-
-        # Then add rules from related professions
-        related_profs = self.profession_mapper.get_related_professions(mapped_profession)
-        for rule in tax_rules:
-            rule_prof = rule["profession"].lower()
-            if (rule_prof != mapped_prof_lower and  # Skip already added exact matches
-                any(prof.lower() == rule_prof for prof in related_profs)):
-                relevant_rules.append(rule)
-
-        if not relevant_rules:
-            return []
+        # Load relevant rules using mapped profession
+        relevant_tax_rules = self.rules_loader.load_rules_for_profession(
+            mapped_profession,  # Use mapped profession here
+            self.profession_mapper
+        )
+        
+        if not relevant_tax_rules:
+            logger.warning(f"No tax rules found for profession: {mapped_profession}")
+            return ["Sorry, we couldn't find any tax relief recommendations for your profession."]
 
         try:
-            # Prepare criteria with enhanced context
-            criteria_texts = [
-                f"Tax relief for {rule['criteria'].lower()} in {rule['profession']}" 
-                for rule in relevant_rules
-            ]
-            
-            # Enhance user questions with more context
+            # Generate human readable intro
+            intro = (
+                f"Based on our data regarding the {mapped_profession} profession, "
+                "here are some potential tax relief opportunities you may be eligible for:\n\n"
+            )
+
+            # Enhanced user questions
             enhanced_questions = (
                 f"I am a {profession} and want to know about tax relief for: {questions}. "
                 "This includes equipment, travel, uniforms, and professional expenses."
             )
+            
+            # Prepare criteria with enhanced context
+            criteria_texts = [
+                f"{rule['name']}: {rule['criteria']}"
+                for rule in relevant_tax_rules
+            ]
             
             result = self._classify_text(
                 enhanced_questions,
                 tuple(criteria_texts)
             )
 
-            # Use dynamic threshold based on confidence distribution
-            scores = result['scores']
-            mean_score = sum(scores) / len(scores)
-            threshold = min(0.3, mean_score * 1.5)  # Adaptive threshold
+            # Generate recommendations
+            recommendations = [intro]
             
-            recommendations = []
-            for score, criteria, rule in zip(scores, criteria_texts, relevant_rules):
-                logger.debug(f"Score {score:.2f} for {criteria}")
-                if score > threshold:
+            for score, criteria in zip(result['scores'], criteria_texts):
+                if score > 0.3:  # Confidence threshold
                     recommendations.append(
-                        f"{rule['name']}: {rule['criteria']} ({score:.2f} confidence)"
+                        f"• {criteria}\n"
+                        f"  (Relevance: {score:.0%})"
                     )
+            
+            if len(recommendations) == 1:  # Only has intro
+                recommendations.append(
+                    "While we have information about your profession, none of the "
+                    "available tax relief options seem to directly match your situation. "
+                    "Consider consulting with a tax professional for personalized advice."
+                )
 
             self._cache[cache_key] = recommendations
             return recommendations
 
         except Exception as e:
             logger.error(f"Error generating recommendations: {str(e)}")
-            raise HTTPException(status_code=500, detail=str(e))
+            return ["Sorry, there was an error processing your request. Please try again."]

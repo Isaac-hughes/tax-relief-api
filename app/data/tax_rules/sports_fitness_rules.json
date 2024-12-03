@@ -1,0 +1,17 @@
+[
+  {
+    "profession": "Professional Athlete",
+    "name": "Equipment costs",
+    "criteria": "Sports equipment and training gear"
+  },
+  {
+    "profession": "Sports Physiotherapist",
+    "name": "Treatment equipment",
+    "criteria": "Physiotherapy equipment and supplies"
+  },
+  {
+    "profession": "Personal Trainer",
+    "name": "Insurance costs",
+    "criteria": "Professional liability and public indemnity insurance"
+  }
+]

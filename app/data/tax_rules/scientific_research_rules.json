@@ -1,0 +1,17 @@
+[
+  {
+    "profession": "Research Scientist",
+    "name": "Lab equipment",
+    "criteria": "Personal laboratory equipment and supplies"
+  },
+  {
+    "profession": "Biochemist",
+    "name": "Professional membership",
+    "criteria": "Royal Society of Chemistry membership fees"
+  },
+  {
+    "profession": "Laboratory Technician",
+    "name": "Safety equipment",
+    "criteria": "Personal protective equipment and lab wear"
+  }
+]

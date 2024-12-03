@@ -1,0 +1,37 @@
+[
+  {
+    "profession": "Construction Worker",
+    "name": "Safety equipment",
+    "criteria": "PPE including hard hats, boots, and high-visibility clothing"
+  },
+  {
+    "profession": "Construction Worker",
+    "name": "Tools allowance",
+    "criteria": "Purchase and maintenance of work-related tools"
+  },
+  {
+    "profession": "Electrician",
+    "name": "Professional registration",
+    "criteria": "NICEIC or other certification body registration fees"
+  },
+  {
+    "profession": "Electrician",
+    "name": "Tools and equipment",
+    "criteria": "Specialist electrical tools and testing equipment"
+  },
+  {
+    "profession": "Plumber",
+    "name": "Gas Safe registration",
+    "criteria": "Annual Gas Safe registration fees"
+  },
+  {
+    "profession": "Civil Engineer",
+    "name": "ICE membership",
+    "criteria": "Institution of Civil Engineers membership fees"
+  },
+  {
+    "profession": "Carpenter",
+    "name": "Tool maintenance",
+    "criteria": "Maintenance and replacement of specialist woodworking tools"
+  }
+]

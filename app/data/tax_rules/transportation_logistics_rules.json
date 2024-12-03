@@ -1,0 +1,22 @@
+[
+  {
+    "profession": "HGV Driver",
+    "name": "CPC certification",
+    "criteria": "Driver CPC training and renewal costs"
+  },
+  {
+    "profession": "Pilot",
+    "name": "License fees",
+    "criteria": "Aviation license renewal and medical certification costs"
+  },
+  {
+    "profession": "Taxi Driver",
+    "name": "Vehicle costs",
+    "criteria": "Vehicle maintenance, insurance, and licensing fees"
+  },
+  {
+    "profession": "Courier",
+    "name": "Vehicle expenses",
+    "criteria": "Vehicle running costs and delivery equipment"
+  }
+]

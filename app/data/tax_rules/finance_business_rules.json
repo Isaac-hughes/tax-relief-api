@@ -1,0 +1,32 @@
+[
+  {
+    "profession": "Financial Advisor",
+    "name": "FCA registration",
+    "criteria": "Financial Conduct Authority registration fees"
+  },
+  {
+    "profession": "Financial Advisor",
+    "name": "Professional insurance",
+    "criteria": "Professional indemnity insurance costs"
+  },
+  {
+    "profession": "Accountant",
+    "name": "Professional memberships",
+    "criteria": "ICAEW, ACCA, or other professional body fees"
+  },
+  {
+    "profession": "Investment Banker",
+    "name": "Software subscriptions",
+    "criteria": "Financial data and analysis software licenses"
+  },
+  {
+    "profession": "Business Analyst",
+    "name": "Certification costs",
+    "criteria": "Professional certifications and training courses"
+  },
+  {
+    "profession": "Management Consultant",
+    "name": "Travel expenses",
+    "criteria": "Travel to client sites and business meetings"
+  }
+]

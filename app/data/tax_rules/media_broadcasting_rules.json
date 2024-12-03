@@ -1,0 +1,17 @@
+[
+  {
+    "profession": "Journalist",
+    "name": "Equipment costs",
+    "criteria": "Recording equipment and editing software"
+  },
+  {
+    "profession": "TV Producer",
+    "name": "Professional membership",
+    "criteria": "Broadcasting association membership fees"
+  },
+  {
+    "profession": "Radio Presenter",
+    "name": "Technical equipment",
+    "criteria": "Broadcasting and recording equipment"
+  }
+]

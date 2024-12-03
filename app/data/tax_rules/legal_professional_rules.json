@@ -1,0 +1,32 @@
+[
+  {
+    "profession": "Solicitor",
+    "name": "SRA registration",
+    "criteria": "Solicitors Regulation Authority practicing certificate fees"
+  },
+  {
+    "profession": "Solicitor",
+    "name": "Law Society membership",
+    "criteria": "Law Society membership and professional fees"
+  },
+  {
+    "profession": "Barrister",
+    "name": "Bar Council fees",
+    "criteria": "Bar Council membership and practicing certificate"
+  },
+  {
+    "profession": "Barrister",
+    "name": "Chamber fees",
+    "criteria": "Chambers rent and associated costs"
+  },
+  {
+    "profession": "Legal Executive",
+    "name": "CILEX membership",
+    "criteria": "Chartered Institute of Legal Executives fees"
+  },
+  {
+    "profession": "Patent Attorney",
+    "name": "CIPA membership",
+    "criteria": "Chartered Institute of Patent Attorneys fees"
+  }
+]

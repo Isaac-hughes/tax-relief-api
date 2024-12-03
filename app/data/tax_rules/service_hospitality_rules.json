@@ -1,0 +1,32 @@
+[
+  {
+    "profession": "Chef",
+    "name": "Knife set",
+    "criteria": "Professional kitchen knives and tools"
+  },
+  {
+    "profession": "Chef",
+    "name": "Uniform expenses",
+    "criteria": "Chef whites and kitchen uniform cleaning"
+  },
+  {
+    "profession": "Hairdresser",
+    "name": "Equipment costs",
+    "criteria": "Professional scissors, dryers, and styling tools"
+  },
+  {
+    "profession": "Beautician",
+    "name": "Treatment equipment",
+    "criteria": "Beauty treatment equipment and supplies"
+  },
+  {
+    "profession": "Hotel Manager",
+    "name": "Professional membership",
+    "criteria": "Hotel and hospitality association fees"
+  },
+  {
+    "profession": "Event Planner",
+    "name": "Insurance coverage",
+    "criteria": "Public liability and event insurance costs"
+  }
+]

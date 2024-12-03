@@ -1,0 +1,37 @@
+[
+  {
+    "profession": "Doctor",
+    "name": "GMC registration",
+    "criteria": "Annual General Medical Council registration fees"
+  },
+  {
+    "profession": "Doctor",
+    "name": "Medical indemnity",
+    "criteria": "Medical defense union and professional insurance costs"
+  },
+  {
+    "profession": "Doctor",
+    "name": "Professional subscriptions",
+    "criteria": "BMA and Royal College membership fees"
+  },
+  {
+    "profession": "Nurse",
+    "name": "NMC registration",
+    "criteria": "Annual Nursing and Midwifery Council registration fees"
+  },
+  {
+    "profession": "Nurse",
+    "name": "Uniform expenses",
+    "criteria": "Purchase and cleaning of nursing uniforms"
+  },
+  {
+    "profession": "Dentist",
+    "name": "GDC registration",
+    "criteria": "General Dental Council registration fees"
+  },
+  {
+    "profession": "Dentist",
+    "name": "Equipment costs",
+    "criteria": "Dental equipment and specialized tools"
+  }
+]

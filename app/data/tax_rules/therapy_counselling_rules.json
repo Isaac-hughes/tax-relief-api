@@ -1,0 +1,32 @@
+[
+  {
+    "profession": "Counsellor",
+    "name": "BACP membership",
+    "criteria": "British Association for Counselling and Psychotherapy fees"
+  },
+  {
+    "profession": "Counsellor",
+    "name": "Professional insurance",
+    "criteria": "Professional indemnity and public liability insurance"
+  },
+  {
+    "profession": "Counsellor",
+    "name": "Supervision costs",
+    "criteria": "Required clinical supervision sessions"
+  },
+  {
+    "profession": "Psychotherapist",
+    "name": "UKCP registration",
+    "criteria": "UK Council for Psychotherapy registration fees"
+  },
+  {
+    "profession": "Mental Health Therapist",
+    "name": "Room rental",
+    "criteria": "Therapy room rental and practice space costs"
+  },
+  {
+    "profession": "Art Therapist",
+    "name": "Materials allowance",
+    "criteria": "Art supplies and therapeutic materials"
+  }
+]

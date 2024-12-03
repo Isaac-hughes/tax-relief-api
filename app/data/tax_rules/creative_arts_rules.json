@@ -1,0 +1,37 @@
+[
+  {
+    "profession": "Graphic Designer",
+    "name": "Software licenses",
+    "criteria": "Adobe Creative Suite and other design software subscriptions"
+  },
+  {
+    "profession": "Photographer",
+    "name": "Equipment costs",
+    "criteria": "Cameras, lenses, and photography equipment"
+  },
+  {
+    "profession": "Photographer",
+    "name": "Insurance coverage",
+    "criteria": "Equipment insurance and professional indemnity"
+  },
+  {
+    "profession": "Artist",
+    "name": "Studio costs",
+    "criteria": "Studio rental and workspace expenses"
+  },
+  {
+    "profession": "Artist",
+    "name": "Materials allowance",
+    "criteria": "Art supplies and materials for work"
+  },
+  {
+    "profession": "Voice Actor",
+    "name": "Recording equipment",
+    "criteria": "Microphones and audio recording equipment"
+  },
+  {
+    "profession": "Animator",
+    "name": "Software subscriptions",
+    "criteria": "Animation software licenses and rendering services"
+  }
+]

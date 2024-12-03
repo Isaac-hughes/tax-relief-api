@@ -1,4 +1,4 @@
-from typing import Dict, Set
+from typing import Dict, Set, List
 import difflib
 from app.utils.data_loader import load_tax_rules
 import logging
@@ -12,7 +12,10 @@ class ProfessionMapper:
                 "IT Consultant", "Software Developer", "Software Engineer",
                 "Programmer", "Web Developer", "DevOps Engineer", "Systems Architect",
                 "Network Engineer", "Data Scientist", "Database Administrator",
-                "UI/UX Designer", "Motion Designer", "Game Developer"
+                "UI/UX Designer", "Motion Designer", "Game Developer", "Web Designer",
+                "Cybersecurity Specialist", "Cloud Architect", "Full Stack Developer",
+                "Front End Developer", "Back End Developer", "AI Engineer",
+                "Machine Learning Engineer", "Data Engineer", "IT Technician"
             },
             "Medical_Healthcare": {
                 "Doctor", "Physician", "Surgeon", "Medical Practitioner",
@@ -73,14 +76,43 @@ class ProfessionMapper:
                 "Journalist", "Freelance Writer", "Public Relations Manager",
                 "Social Media Manager", "Copywriter", "Broadcasting Professional",
                 "Media Producer", "Communications Consultant"
+            },
+            "Transportation_Logistics": {
+                "HGV Driver", "Pilot", "Taxi Driver", "Courier",
+                "Fleet Manager", "Logistics Coordinator"
+            },
+            "Scientific_Research": {
+                "Research Scientist", "Biochemist", "Laboratory Technician",
+                "Research Assistant", "Clinical Researcher"
+            },
+            "Sports_Fitness": {
+                "Professional Athlete", "Sports Physiotherapist",
+                "Personal Trainer", "Sports Coach", "Fitness Instructor"
+            },
+            "Media_Broadcasting": {
+                "Journalist", "TV Producer", "Radio Presenter",
+                "News Reporter", "Broadcasting Engineer"
+            },
+            "Agriculture_Environmental": {
+                "Farmer", "Environmental Consultant", "Veterinarian",
+                "Agricultural Advisor", "Conservation Officer"
+            },
+            "Security_Emergency": {
+                "Security Guard", "Private Investigator", "Paramedic",
+                "Emergency Response Officer", "Fire Safety Officer"
             }
         }
 
         # Add common variations and aliases
         self.profession_aliases = {
-            "Software Engineer": ["Programmer", "Developer", "Coder", "Software Dev", "SWE", "Software Developer"],
+             "Software Engineer": ["Programmer", "Developer", "Coder", "Software Dev", "SWE", "Software Developer"],
             "IT Consultant": ["Tech Consultant", "Technical Consultant", "IT Advisor", "Technology Consultant"],
             "Systems Architect": ["Solutions Architect", "Technical Architect", "Enterprise Architect", "CTO"],
+            "Web Developer": ["Frontend Developer", "Backend Developer", "Full Stack Developer", "Website Developer"],
+            "Data Scientist": ["ML Engineer", "Machine Learning Specialist", "AI Scientist"],
+            "UI/UX Designer": ["UX Designer", "UI Designer", "Product Designer", "UX/UI Designer"],
+            "Game Developer": ["Game Programmer", "Video Game Developer", "Unity Developer", "Unreal Developer"],
+            "Motion Designer": ["Motion Graphics Artist", "Animator", "Visual Effects Artist"],
             
             "Doctor": ["Physician", "Medical Doctor", "GP", "General Practitioner", "Medical Officer"],
             "Physiotherapist": ["Physical Therapist", "PT", "Sports Therapist", "Rehab Therapist"],
@@ -93,6 +125,19 @@ class ProfessionMapper:
             "Graphic Designer": ["Digital Designer", "Visual Designer", "Brand Designer"],
             "UI/UX Designer": ["Product Designer", "Interface Designer", "UX/UI Designer", "Digital Product Designer"],
             "Content Creator": ["YouTuber", "Social Media Creator", "Digital Content Producer", "Influencer"]
+        }
+
+        # Add category relationships
+        self.related_categories = {
+            "Medical_Healthcare": ["Therapy_Counselling", "Alternative_Health"],
+            "IT_Digital": ["Creative_Arts"],  # For UI/UX designers etc.
+            "Finance_Business": ["Legal_Professional"],
+            "Transportation_Logistics": ["Service_Hospitality"],
+            "Scientific_Research": ["Medical_Healthcare", "IT_Digital"],
+            "Sports_Fitness": ["Education_Training", "Medical_Healthcare"],
+            "Media_Broadcasting": ["Creative_Arts", "IT_Digital"],
+            "Agriculture_Environmental": ["Scientific_Research"],
+            "Security_Emergency": ["Medical_Healthcare"]
         }
 
     def get_matching_profession(self, input_profession: str) -> str:
@@ -167,3 +212,21 @@ class ProfessionMapper:
         # If no group found, return empty set
         logger.warning(f"No related professions found for {profession}")
         return set()
+
+    def get_profession_category(self, profession: str) -> str:
+        """Get the category for a profession"""
+        normalized_prof = self._normalize_profession_name(profession)
+        
+        for category, professions in self.profession_groups.items():
+            if any(self._normalize_profession_name(p) == normalized_prof 
+                  for p in professions):
+                return category
+        return None
+        
+    def get_related_categories(self, category: str) -> List[str]:
+        """Get related categories for a given category"""
+        return self.related_categories.get(category, [])
+
+    def _normalize_profession_name(self, profession: str) -> str:
+        """Normalize the profession name for comparison"""
+        return profession.lower().replace(" ", "")

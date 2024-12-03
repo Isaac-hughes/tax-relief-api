@@ -1,0 +1,247 @@
+[
+  {
+    "profession": "Software Engineer",
+    "name": "Professional memberships",
+    "criteria": "BCS, IEEE, or other professional body membership fees"
+  },
+  {
+    "profession": "Software Engineer",
+    "name": "Equipment costs",
+    "criteria": "Purchase of computer equipment and development tools"
+  },
+  {
+    "profession": "Software Engineer",
+    "name": "Training expenses",
+    "criteria": "Technical certifications and professional development courses"
+  },
+  {
+    "profession": "IT Consultant",
+    "name": "Professional insurance",
+    "criteria": "Professional indemnity and public liability insurance"
+  },
+  {
+    "profession": "IT Consultant",
+    "name": "Travel expenses",
+    "criteria": "Travel costs to client sites and meetings"
+  },
+  {
+    "profession": "DevOps Engineer",
+    "name": "Cloud certifications",
+    "criteria": "AWS, Azure, or GCP certification costs"
+  },
+  {
+    "profession": "DevOps Engineer",
+    "name": "Infrastructure costs",
+    "criteria": "Costs for cloud infrastructure during development and testing"
+  },
+  {
+    "profession": "UI/UX Designer",
+    "name": "Software subscriptions",
+    "criteria": "Design software licenses and tools (Adobe, Figma, etc.)"
+  },
+  {
+    "profession": "UI/UX Designer",
+    "name": "Hardware costs",
+    "criteria": "High-performance computers and tablets for design work"
+  },
+  {
+    "profession": "UI/UX Designer",
+    "name": "User testing tools",
+    "criteria": "Subscriptions for user research and testing platforms"
+  },
+  {
+    "profession": "Data Scientist",
+    "name": "Computing resources",
+    "criteria": "Cloud computing and specialized hardware costs"
+  },
+  {
+    "profession": "Data Scientist",
+    "name": "Training expenses",
+    "criteria": "Machine learning and data analysis certification courses"
+  },
+  {
+    "profession": "Data Scientist",
+    "name": "Data acquisition costs",
+    "criteria": "Purchasing or accessing specialized datasets"
+  },
+  {
+    "profession": "Network Engineer",
+    "name": "Certification costs",
+    "criteria": "Cisco, CompTIA, or other networking certifications"
+  },
+  {
+    "profession": "Network Engineer",
+    "name": "Tools allowance",
+    "criteria": "Network testing tools and diagnostic equipment"
+  },
+  {
+    "profession": "Network Engineer",
+    "name": "Travel expenses",
+    "criteria": "Travel to client sites or network installations"
+  },
+  {
+    "profession": "Systems Architect",
+    "name": "Professional memberships",
+    "criteria": "Membership fees for technical bodies like IEEE or BCS"
+  },
+  {
+    "profession": "Systems Architect",
+    "name": "Training courses",
+    "criteria": "Technical architecture and cloud system certifications"
+  },
+  {
+    "profession": "Systems Architect",
+    "name": "Software subscriptions",
+    "criteria": "Tools for architecture design and system modeling"
+  },
+  {
+    "profession": "Game Developer",
+    "name": "Software subscriptions",
+    "criteria": "Game development tools like Unity, Unreal Engine, or Maya"
+  },
+  {
+    "profession": "Game Developer",
+    "name": "Hardware costs",
+    "criteria": "High-performance computers and gaming peripherals"
+  },
+  {
+    "profession": "Game Developer",
+    "name": "Testing equipment",
+    "criteria": "VR headsets, consoles, and other testing devices"
+  },
+  {
+    "profession": "Motion Designer",
+    "name": "Software licenses",
+    "criteria": "Motion graphics tools such as After Effects, Cinema 4D"
+  },
+  {
+    "profession": "Motion Designer",
+    "name": "Hardware expenses",
+    "criteria": "Rendering computers and high-resolution monitors"
+  },
+  {
+    "profession": "Motion Designer",
+    "name": "Animation assets",
+    "criteria": "Stock animations, templates, and licensed elements"
+  },
+  {
+    "profession": "Web Developer",
+    "name": "Hosting expenses",
+    "criteria": "Web hosting and domain registration fees for client work"
+  },
+  {
+    "profession": "Web Developer",
+    "name": "Software licenses",
+    "criteria": "Development tools such as Visual Studio, Sublime Text, or GitHub"
+  },
+  {
+    "profession": "Web Developer",
+    "name": "Testing tools",
+    "criteria": "Browser compatibility and load testing subscriptions"
+  },
+  {
+    "profession": "Database Administrator",
+    "name": "Software licenses",
+    "criteria": "Database management tools such as SQL Server, Oracle DB, or MongoDB"
+  },
+  {
+    "profession": "Database Administrator",
+    "name": "Backup systems",
+    "criteria": "Costs for implementing backup and disaster recovery systems"
+  },
+  {
+    "profession": "Database Administrator",
+    "name": "Training certifications",
+    "criteria": "Database-specific training and certifications"
+  },
+  {
+    "profession": "Cybersecurity Specialist",
+    "name": "Certification costs",
+    "criteria": "Costs for certifications like CISSP, CEH, or CompTIA Security+"
+  },
+  {
+    "profession": "Cybersecurity Specialist",
+    "name": "Penetration testing tools",
+    "criteria": "Costs for ethical hacking tools and subscriptions"
+  },
+  {
+    "profession": "Cybersecurity Specialist",
+    "name": "Training expenses",
+    "criteria": "Courses and resources for staying updated on new threats"
+  },
+  {
+    "profession": "AI Engineer",
+    "name": "Computing resources",
+    "criteria": "High-performance GPUs and cloud computing costs"
+  },
+  {
+    "profession": "AI Engineer",
+    "name": "Training certifications",
+    "criteria": "Costs for AI, machine learning, and deep learning certifications"
+  },
+  {
+    "profession": "AI Engineer",
+    "name": "Software tools",
+    "criteria": "Licenses for AI frameworks and libraries like TensorFlow and PyTorch"
+  },
+  {
+    "profession": "Machine Learning Engineer",
+    "name": "Computing infrastructure",
+    "criteria": "Costs for setting up cloud-based machine learning pipelines"
+  },
+  {
+    "profession": "Machine Learning Engineer",
+    "name": "Specialized hardware",
+    "criteria": "Purchase of GPUs and TPUs for model training"
+  },
+  {
+    "profession": "Machine Learning Engineer",
+    "name": "Training data costs",
+    "criteria": "Purchasing datasets for model training and validation"
+  },
+  {
+    "profession": "Cloud Architect",
+    "name": "Certification costs",
+    "criteria": "AWS, Azure, or GCP architecture certification costs"
+  },
+  {
+    "profession": "Cloud Architect",
+    "name": "Cloud subscriptions",
+    "criteria": "Subscription costs for cloud service providers during design and testing"
+  },
+  {
+    "profession": "Cloud Architect",
+    "name": "Professional memberships",
+    "criteria": "Memberships to cloud computing organizations or forums"
+  },
+  {
+    "profession": "Full Stack Developer",
+    "name": "Software tools",
+    "criteria": "Licenses for integrated development environments and debugging tools"
+  },
+  {
+    "profession": "Full Stack Developer",
+    "name": "Training expenses",
+    "criteria": "Courses for mastering frameworks like React, Node.js, and Django"
+  },
+  {
+    "profession": "Full Stack Developer",
+    "name": "Testing tools",
+    "criteria": "Subscriptions for automated testing platforms"
+  },
+  {
+    "profession": "IT Technician",
+    "name": "Hardware tools",
+    "criteria": "Purchase of diagnostic and repair tools for client equipment"
+  },
+  {
+    "profession": "IT Technician",
+    "name": "Travel expenses",
+    "criteria": "Costs for traveling to client sites for hardware setup and repairs"
+  },
+  {
+    "profession": "IT Technician",
+    "name": "Training certifications",
+    "criteria": "Costs for certifications like CompTIA A+ or Microsoft Certified Technician"
+  }
+]

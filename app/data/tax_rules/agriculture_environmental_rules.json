@@ -1,0 +1,17 @@
+[
+  {
+    "profession": "Farmer",
+    "name": "Equipment costs",
+    "criteria": "Agricultural machinery and tools"
+  },
+  {
+    "profession": "Environmental Consultant",
+    "name": "Professional membership",
+    "criteria": "Environmental body membership fees"
+  },
+  {
+    "profession": "Veterinarian",
+    "name": "RCVS registration",
+    "criteria": "Royal College of Veterinary Surgeons fees"
+  }
+]

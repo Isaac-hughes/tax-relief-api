@@ -1,0 +1,17 @@
+[
+  {
+    "profession": "Security Guard",
+    "name": "SIA license",
+    "criteria": "Security Industry Authority license fees"
+  },
+  {
+    "profession": "Private Investigator",
+    "name": "Equipment costs",
+    "criteria": "Surveillance equipment and software"
+  },
+  {
+    "profession": "Paramedic",
+    "name": "HCPC registration",
+    "criteria": "Health and Care Professions Council fees"
+  }
+]
